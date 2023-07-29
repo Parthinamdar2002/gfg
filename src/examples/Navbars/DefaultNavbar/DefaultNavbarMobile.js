@@ -87,7 +87,7 @@ function DefaultNavbarMobile({ routes, open }) {
                           transition: "all 300ms linear",
 
                           "&:hover": {
-                            backgroundColor: grey[600],
+                            backgroundColor: grey[200],
                             color: dark.main,
                           },
                         })}

@@ -26,7 +26,7 @@ import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
 // Presentation page components
-// import ExampleCard from "pages/Presentation/components/ExampleCard";
+import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
 import data from "pages/Presentation/sections/data/designBlocksData";
@@ -44,7 +44,7 @@ function DesignBlocks() {
           </MKTypography>
         </MKBox>
       </Grid>
-      {/* <Grid item xs={12} lg={9}>
+      <Grid item xs={12} lg={9}>
         <Grid container spacing={3}>
           {items.map(({ image, name, count, route, pro }) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
@@ -54,7 +54,7 @@ function DesignBlocks() {
             </Grid>
           ))}
         </Grid>
-      </Grid> */}
+      </Grid>
     </Grid>
   ));
 
