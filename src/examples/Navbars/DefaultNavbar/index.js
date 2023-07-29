@@ -471,13 +471,15 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
-        <MKBox display="flex" justifyContent="space-between" alignItems="center">
+        <MKBox display="flex" justifyContent="center" alignItems="center">
           <MKBox
             component={Link}
             to="/"
             lineHeight={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+            display="flex"
+            alignItems="center"
           >
             <MKBox
               minHeight="9vh"
@@ -491,6 +493,18 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
                 placeItems: "center",
               }}
             />
+            <MKBox
+              width="fit-content"
+              display="inline-flex"
+              height="100%"
+              justifyContent="center"
+              alignItems="center"
+              fontWeight="100"
+              fontSize="2rem"
+              color="green"
+            >
+              <span>✕</span>
+            </MKBox>
             <MKBox
               minHeight="9vh"
               width="9vh"
