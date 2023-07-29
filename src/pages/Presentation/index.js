@@ -42,6 +42,8 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
+import gfgLogo from "assets/images/gfg-gg-logo.svg";
+import mgmLogo from "assets/images/LogoMGM.svg";
 
 function Presentation() {
   return (
@@ -55,6 +57,8 @@ function Presentation() {
           color: "info",
         }}
         sticky
+        gfgLogo={gfgLogo}
+        mgmLogo={mgmLogo}
       />
       <MKBox
         minHeight="75vh"

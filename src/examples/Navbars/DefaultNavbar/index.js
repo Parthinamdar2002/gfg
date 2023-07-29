@@ -34,7 +34,7 @@ import MuiLink from "@mui/material/Link";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
+// import MKButton from "components/MKButton";
 
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ routes, transparent, light, sticky, relative, center, gfgLogo, mgmLogo }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -476,9 +476,30 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
-            </MKTypography>
+            <MKBox
+              minHeight="9vh"
+              width="9vh"
+              sx={{
+                backgroundImage: `url(${gfgLogo})`,
+                backgroundSize: "fit",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                display: "inline-block",
+                placeItems: "center",
+              }}
+            />
+            <MKBox
+              minHeight="9vh"
+              width="9vh"
+              sx={{
+                backgroundImage: `url(${mgmLogo})`,
+                backgroundSize: "fit",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                display: "inline-block",
+                placeItems: "center",
+              }}
+            />
           </MKBox>
           <MKBox
             color="inherit"
@@ -488,6 +509,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
+          {/*
           <MKBox ml={{ xs: "auto", lg: 0 }}>
             {action &&
               (action.type === "internal" ? (
@@ -522,6 +544,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                 </MKButton>
               ))}
           </MKBox>
+          */}
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
@@ -551,21 +574,24 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Material Kit 2",
+  // brand: "Material Kit 2",
   transparent: false,
   light: false,
-  action: false,
+  // action: false,
   sticky: false,
   relative: false,
   center: false,
+  gfgLogo: "",
+  mgmLogo: "",
 };
 
 // Typechecking props for the DefaultNavbar
 DefaultNavbar.propTypes = {
-  brand: PropTypes.string,
+  // brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
   transparent: PropTypes.bool,
   light: PropTypes.bool,
+  /*
   action: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.shape({
@@ -586,6 +612,9 @@ DefaultNavbar.propTypes = {
       label: PropTypes.string.isRequired,
     }),
   ]),
+  */
+  gfgLogo: PropTypes.string,
+  mgmLogo: PropTypes.string,
   sticky: PropTypes.bool,
   relative: PropTypes.bool,
   center: PropTypes.bool,
