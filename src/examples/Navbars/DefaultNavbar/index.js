@@ -19,6 +19,9 @@ import { Fragment, useState, useEffect } from "react";
 // react-router components
 import { Link } from "react-router-dom";
 
+import gfg from "assets/images/gfg-gg-logo.svg";
+import mgm from "assets/images/LogoMGM.svg";
+
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -581,8 +584,8 @@ DefaultNavbar.defaultProps = {
   sticky: false,
   relative: false,
   center: false,
-  gfgLogo: "",
-  mgmLogo: "",
+  gfgLogo: gfg,
+  mgmLogo: mgm,
 };
 
 // Typechecking props for the DefaultNavbar
