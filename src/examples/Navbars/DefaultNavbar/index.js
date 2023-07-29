@@ -501,7 +501,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
               alignItems="center"
               fontWeight="100"
               fontSize="2rem"
-              color="green"
+              color="black"
             >
               <span>✕</span>
             </MKBox>

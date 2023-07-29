@@ -40,13 +40,13 @@ Coded by www.creative-tim.com
 import Icon from "@mui/material/Icon";
 
 // @mui icons
-import GitHubIcon from "@mui/icons-material/GitHub";
+// import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Pages
-import AboutUs from "layouts/pages/landing-pages/about-us";
-import ContactUs from "layouts/pages/landing-pages/contact-us";
-import Author from "layouts/pages/landing-pages/author";
-import SignIn from "layouts/pages/authentication/sign-in";
+// import AboutUs from "layouts/pages/landing-pages/about-us";
+// import ContactUs from "layouts/pages/landing-pages/contact-us";
+// import Author from "layouts/pages/landing-pages/author";
+// import SignIn from "layouts/pages/authentication/sign-in";
 
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -70,10 +70,12 @@ import Typography from "layouts/sections/elements/typography";
 
 const routes = [
   {
-    name: "pages",
+    name: "Home",
     icon: <Icon>dashboard</Icon>,
     columns: 1,
     rowsPerColumn: 2,
+    href: "/",
+    /*
     collapse: [
       {
         name: "landing pages",
@@ -106,10 +108,11 @@ const routes = [
         ],
       },
     ],
+  */
   },
 
   {
-    name: "sections",
+    name: "Events",
     icon: <Icon>view_day</Icon>,
     collapse: [
       {
@@ -240,7 +243,7 @@ const routes = [
     ],
   },
   {
-    name: "docs",
+    name: "blog",
     icon: <Icon>article</Icon>,
     collapse: [
       {
@@ -265,11 +268,13 @@ const routes = [
       },
     ],
   },
+  /*
   {
     name: "github",
     icon: <GitHubIcon />,
     href: "https://www.github.com/creativetimofficial/material-kit-react",
   },
+  */
 ];
 
 export default routes;

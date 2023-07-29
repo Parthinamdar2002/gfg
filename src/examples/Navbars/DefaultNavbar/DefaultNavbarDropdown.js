@@ -41,8 +41,11 @@ function DefaultNavbarDropdown({
   const linkComponent = {
     component: "a",
     href,
+    /*
+     * who tf thought this was a good idea?
     target: "_blank",
     rel: "noreferrer",
+    */
   };
 
   const routeComponent = {
