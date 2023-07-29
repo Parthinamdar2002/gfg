@@ -486,7 +486,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
               width="9vh"
               sx={{
                 backgroundImage: `url(${gfgLogo})`,
-                backgroundSize: "fit",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 display: "inline-block",
@@ -510,7 +510,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
               width="9vh"
               sx={{
                 backgroundImage: `url(${mgmLogo})`,
-                backgroundSize: "fit",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 display: "inline-block",
