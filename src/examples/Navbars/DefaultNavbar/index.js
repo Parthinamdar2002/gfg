@@ -471,7 +471,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
-        <MKBox display="flex" justifyContent="center" alignItems="center">
+        <MKBox display="flex" justifyContent="space-around" alignItems="center">
           <MKBox
             component={Link}
             to="/"
