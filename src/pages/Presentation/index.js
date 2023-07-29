@@ -44,6 +44,9 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/bg-presentation.jpg";
 import gfgLogo from "assets/images/gfg-gg-logo.svg";
 import mgmLogo from "assets/images/LogoMGM.svg";
+// import Spline from "@splinetool/react-spline";
+
+// https://prod.spline.design/KyZHmy1h68qr0uNW/scene.splinecode
 
 function Presentation() {
   return (
