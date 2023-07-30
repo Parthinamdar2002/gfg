@@ -36,7 +36,11 @@ function Profile(props) {
       <Container>
         <Grid container item xs={12} justifyContent="center" mx="auto">
           <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
-            <MKAvatar src="" alt="Bruce Mars" size="xxl" shadow="xl" />
+            {Object.keys(current).includes("author") ? (
+              <MKAvatar src={current.author.avatar_URL} alt="Bruce Mars" size="xxl" shadow="xl" />
+            ) : (
+              1
+            )}
           </MKBox>
           <Grid container justifyContent="center" py={6}>
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
@@ -112,7 +116,7 @@ Profile.defaultProps = {
   content: "bhau",
   avatar: profilePicture,
   */
-  current: {},
+  current: { author: { avatar_URL: "" } },
 };
 Profile.propTypes = {
   /*
