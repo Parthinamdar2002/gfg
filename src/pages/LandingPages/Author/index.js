@@ -34,7 +34,23 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/city-profile.jpg";
 
+import { useState } from "react";
+
 function Author() {
+  const [content, setContent] = useState("");
+  const [head, setHead] = useState("");
+  const [avatar, setAvatar] = useState("");
+  // const [otherPosts, setOtherPosts] = useState([]);
+  fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      setContent(res.posts[0].content);
+      setHead(res.posts[0].title);
+      setAvatar(res.posts[0].author.avatar_URL);
+      // setOtherPosts(res.slice());
+    });
+  console.log(avatar);
   return (
     <>
       <DefaultNavbar
@@ -75,7 +91,7 @@ function Author() {
             boxShadow: ({ boxShadows: { xxl } }) => xxl,
           }}
         >
-          <Profile />
+          <Profile content={content} head={head} avatar={avatar} />
           <Posts />
         </Card>
         <Contact />
