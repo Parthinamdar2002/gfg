@@ -23,27 +23,20 @@ import MKBox from "components/MKBox";
 import MKAvatar from "components/MKAvatar";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
-import { useEffect, useState } from "react";
 // Images
-import profilePicture from "assets/images/bruce-mars.jpg";
+import profilePicture from "assets/images/gfg-gg-logo.svg";
+// Proptypes
+import PropTypes from "prop-types";
 
-function Profile() {
-  const [content, setContent] = useState("");
-  const [head, setHead] = useState("");
-  useEffect(() => {
-    fetch("https://techcrunch.com/wp-json/wp/v2/posts/?per_page=10")
-      .then((res) => res.json())
-      .then((res) => {
-        setContent(res[0].content.rendered);
-        setHead(res[0].title.rendered);
-      });
-  }, []);
+function Profile(props) {
+  const { head, content, avatar } = props;
+  console.log(head, content, avatar);
   return (
     <MKBox component="section" py={{ xs: 6, sm: 12 }}>
       <Container>
         <Grid container item xs={12} justifyContent="center" mx="auto">
           <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
-            <MKAvatar src={profilePicture} alt="Burce Mars" size="xxl" shadow="xl" />
+            <MKAvatar src={avatar} alt="Burce Mars" size="xxl" shadow="xl" />
           </MKBox>
           <Grid container justifyContent="center" py={6}>
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
@@ -115,5 +108,14 @@ function Profile() {
     </MKBox>
   );
 }
-
+Profile.defaultProps = {
+  head: "meow",
+  content: "bhau",
+  avatar: profilePicture,
+};
+Profile.propTypes = {
+  content: PropTypes.string,
+  head: PropTypes.string,
+  avatar: PropTypes.string,
+};
 export default Profile;
