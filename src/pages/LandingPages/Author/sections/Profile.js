@@ -24,24 +24,24 @@ import MKAvatar from "components/MKAvatar";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 // Images
-import profilePicture from "assets/images/gfg-gg-logo.svg";
+// import profilePicture from "assets/images/gfg-gg-logo.svg";
 // Proptypes
 import PropTypes from "prop-types";
 
 function Profile(props) {
-  const { head, content, avatar } = props;
-  console.log(head, content, avatar);
+  const { current } = props;
+  console.log("meow", current);
   return (
     <MKBox component="section" py={{ xs: 6, sm: 12 }}>
       <Container>
         <Grid container item xs={12} justifyContent="center" mx="auto">
           <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
-            <MKAvatar src={avatar} alt="Burce Mars" size="xxl" shadow="xl" />
+            <MKAvatar src="" alt="Bruce Mars" size="xxl" shadow="xl" />
           </MKBox>
           <Grid container justifyContent="center" py={6}>
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
               <MKBox display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-                <MKTypography variant="h3">{head}</MKTypography>
+                <MKTypography variant="h3">{current.title}</MKTypography>
                 <MKButton variant="outlined" color="info" size="small">
                   Follow
                 </MKButton>
@@ -73,7 +73,7 @@ function Profile(props) {
                 </Grid>
               </Grid>
               <MKTypography variant="body1" fontWeight="light" color="text">
-                <div dangerouslySetInnerHTML={{ __html: content }} />
+                <div dangerouslySetInnerHTML={{ __html: current.content }} />
                 <MKTypography
                   component="a"
                   href="#"
@@ -107,13 +107,19 @@ function Profile(props) {
   );
 }
 Profile.defaultProps = {
+  /*
   head: "meow",
   content: "bhau",
   avatar: profilePicture,
+  */
+  current: {},
 };
 Profile.propTypes = {
+  /*
   content: PropTypes.string,
   head: PropTypes.string,
   avatar: PropTypes.string,
+  */
+  current: PropTypes.objectOf(PropTypes.object),
 };
 export default Profile;

@@ -36,24 +36,36 @@ import bgImage from "assets/images/city-profile.jpg";
 
 import { useEffect, useState } from "react";
 
+function isBlog(posts) {
+  console.log("meowww", Object.keys(posts[0].categories).includes("blog"));
+
+  const out = posts.filter((post) => Object.keys(post.categories).includes("blog"));
+
+  console.log("meowwwest", out);
+  return out;
+}
 function Author() {
-  const [content, setContent] = useState("");
-  const [head, setHead] = useState("");
-  let current;
+  const [current, setCurrent] = useState("");
   const [avatar, setAvatar] = useState("");
   const [otherPosts, setOtherPosts] = useState([]);
   useEffect(() => {
     fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
       .then((res) => res.json())
+      .then((res) => isBlog(res.posts))
       .then((res) => {
         console.log(res);
-        setContent(res.posts[0].content);
-        setHead(res.posts[0].title);
-        current = res.posts[0].ID;
-        setAvatar(res.posts[0].author.avatar_URL);
-        setOtherPosts(res.posts.filter((e) => e.ID !== current));
+        setCurrent(res[0]);
+        setAvatar(res[0].author.avatar_URL);
+        setOtherPosts(
+          res.filter((e) => {
+            console.log("bhow", e.ID, current.ID);
+            return e.ID !== current.ID;
+          })
+        );
       });
   }, []);
+  console.log("hahaha", current);
+  console.log("hahaha", current);
   console.log(avatar);
   return (
     <>
@@ -95,7 +107,7 @@ function Author() {
             boxShadow: ({ boxShadows: { xxl } }) => xxl,
           }}
         >
-          <Profile content={content} head={head} avatar={avatar} />
+          <Profile current={current} />
           <Posts posts={otherPosts} />
         </Card>
         <Contact />

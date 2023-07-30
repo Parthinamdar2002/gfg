@@ -122,7 +122,7 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-dribbble" />
+              <i className="fab fa-instagram" />
             </MKTypography>
             <MKTypography
               component={Link}
@@ -134,7 +134,7 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-twitter" />
+              <i className="fab fa-discord fa-pulse" />
             </MKTypography>
             <MKTypography
               component={Link}
@@ -146,7 +146,7 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-pinterest" />
+              <i className="fa fa-envelope" />
             </MKTypography>
             <MKTypography
               component={Link}
@@ -157,7 +157,7 @@ function Footer() {
               color="dark"
               opacity={0.5}
             >
-              <i className="fab fa-github" />
+              <i className="fab fa-linkedin" />
             </MKTypography>
           </Grid>
         </Grid>
