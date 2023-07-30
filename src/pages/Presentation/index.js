@@ -87,7 +87,7 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              {"Unleash The Limitless Potential "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -96,8 +96,9 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+              {
+                "A place where you can learn from the best, improve your technical skills and network with like-minded people "
+              }
             </MKTypography>
           </Grid>
         </Container>
