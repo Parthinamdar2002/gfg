@@ -34,22 +34,24 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/city-profile.jpg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Author() {
   const [content, setContent] = useState("");
   const [head, setHead] = useState("");
   const [avatar, setAvatar] = useState("");
-  // const [otherPosts, setOtherPosts] = useState([]);
-  fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res);
-      setContent(res.posts[0].content);
-      setHead(res.posts[0].title);
-      setAvatar(res.posts[0].author.avatar_URL);
-      // setOtherPosts(res.slice());
-    });
+  const [otherPosts, setOtherPosts] = useState([]);
+  useEffect(() => {
+    fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setContent(res.posts[0].content);
+        setHead(res.posts[0].title);
+        setAvatar(res.posts[0].author.avatar_URL);
+        setOtherPosts(res.posts.slice(1, 4));
+      });
+  }, []);
   console.log(avatar);
   return (
     <>
@@ -92,7 +94,7 @@ function Author() {
           }}
         >
           <Profile content={content} head={head} avatar={avatar} />
-          <Posts />
+          <Posts posts={otherPosts} />
         </Card>
         <Contact />
         <Footer />
