@@ -39,6 +39,7 @@ import { useEffect, useState } from "react";
 function Author() {
   const [content, setContent] = useState("");
   const [head, setHead] = useState("");
+  let current;
   const [avatar, setAvatar] = useState("");
   const [otherPosts, setOtherPosts] = useState([]);
   useEffect(() => {
@@ -48,8 +49,9 @@ function Author() {
         console.log(res);
         setContent(res.posts[0].content);
         setHead(res.posts[0].title);
+        current = res.posts[0].ID;
         setAvatar(res.posts[0].author.avatar_URL);
-        setOtherPosts(res.posts.slice(1, 4));
+        setOtherPosts(res.posts.filter((e) => e.ID !== current));
       });
   }, []);
   console.log(avatar);
