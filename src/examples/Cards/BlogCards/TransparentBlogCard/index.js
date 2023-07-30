@@ -30,7 +30,7 @@ import MKTypography from "components/MKTypography";
 
 function TransparentBlogCard({ image, title, description, action }) {
   const cardActionStyles = {
-    display: "flex",
+    display: "inline",
     alignItems: "center",
     width: "max-content",
 
@@ -83,30 +83,18 @@ function TransparentBlogCard({ image, title, description, action }) {
         overflow: "visible",
       }}
     >
-      {action.type === "internal" ? (
-        <Link to={action.route}>{imageTemplate}</Link>
-      ) : (
-        <MuiLink href={action.route} target="_blank" rel="noreferrer">
-          {imageTemplate}
-        </MuiLink>
-      )}
-      <MKBox pt={2} pb={3}>
-        {action.type === "internal" ? (
-          <Link to={action.route} sx={cardActionStyles}>
-            <MKTypography variant="h5" gutterBottom>
-              {title}
-            </MKTypography>
-          </Link>
-        ) : (
-          <MuiLink href={action.route} target="_blank" rel="noreferrer" sx={cardActionStyles}>
-            <MKTypography variant="h5" gutterBottom>
-              {title}
-            </MKTypography>
-          </MuiLink>
-        )}
-        <MKTypography variant="body2" component="p" color="text" mb={3}>
-          {description}
+      {imageTemplate}
+      <MKBox pt={2} pb={3} cursor="default">
+        <MKTypography variant="h5" gutterBottom>
+          {title}
         </MKTypography>
+        <MKTypography
+          variant="body2"
+          component="p"
+          color="text"
+          mb={3}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
         {action.type === "internal" ? (
           <MKTypography
             component={Link}
@@ -117,8 +105,10 @@ function TransparentBlogCard({ image, title, description, action }) {
             textTransform="capitalize"
             sx={cardActionStyles}
           >
+            {/*
             {action.label}
             <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+            */}
           </MKTypography>
         ) : (
           <MKTypography
@@ -149,7 +139,7 @@ TransparentBlogCard.propTypes = {
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]),
     route: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     color: PropTypes.oneOf([
       "inherit",
       "primary",

@@ -45,28 +45,31 @@ function isBlog(posts) {
   return out;
 }
 function Author() {
-  const [current, setCurrent] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [current, setCurrent] = useState("you failed!");
+  const [posts, setPosts] = useState([]);
   const [otherPosts, setOtherPosts] = useState([]);
+  useEffect(() => {
+    console.log("p", posts);
+    setCurrent(posts[0]);
+  }, [posts]);
   useEffect(() => {
     fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
       .then((res) => res.json())
       .then((res) => isBlog(res.posts))
       .then((res) => {
-        console.log(res);
-        setCurrent(res[0]);
-        setAvatar(res[0].author.avatar_URL);
-        setOtherPosts(
-          res.filter((e) => {
-            console.log("bhow", e.ID, current.ID);
-            return e.ID !== current.ID;
-          })
-        );
+        setPosts(res);
       });
   }, []);
+  useEffect(() => {
+    setOtherPosts(
+      posts.filter((e) => {
+        console.log("bhow", e.ID, current.ID);
+        return e.ID !== current.ID;
+      })
+    );
+  }, [current]);
   console.log("hahaha", current);
   console.log("hahaha", current);
-  console.log(avatar);
   return (
     <>
       <DefaultNavbar
@@ -108,7 +111,7 @@ function Author() {
           }}
         >
           <Profile current={current} />
-          <Posts posts={otherPosts} />
+          <Posts posts={otherPosts} setCurrent={setCurrent} />
         </Card>
         <Contact />
         <Footer />

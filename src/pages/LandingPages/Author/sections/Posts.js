@@ -36,7 +36,8 @@ import post4 from "assets/images/examples/blog2.jpg";
 import PropTypes from "prop-types";
 
 function Posts(props) {
-  const { posts } = props;
+  const { posts, setCurrent } = props;
+
   return (
     <MKBox component="section" py={2}>
       <Container>
@@ -47,16 +48,16 @@ function Posts(props) {
         </Grid>
         <Grid container spacing={3}>
           {posts.map((post) => (
-            <Grid item xs={12} sm={6} lg={3}>
+            // eslint-disable-next-line
+            <Grid item xs={12} sm={6} lg={3} onClick={() => setCurrent(post)}>
               <TransparentBlogCard
                 image={post1}
                 title={post.title}
-                description={post.content}
+                description={post.excerpt}
                 action={{
                   type: "internal",
                   route: "/pages/blogs/author",
                   color: "info",
-                  label: "read more",
                 }}
               />
             </Grid>
@@ -68,9 +69,11 @@ function Posts(props) {
 }
 Posts.defaultProps = {
   posts: [{}],
+  setCurrent: [],
 };
 Posts.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object),
+  setCurrent: PropTypes.func,
 };
 
 export default Posts;
