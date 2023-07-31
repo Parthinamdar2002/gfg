@@ -25,7 +25,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Material Kit 2 React themes
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
-
+import Author from "pages/LandingPages/Author";
 // Material Kit 2 React routes
 import routes from "routes";
 
@@ -44,8 +44,8 @@ export default function App() {
         return getRoutes(route.collapse);
       }
 
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+      if (route.route && !route.renderLater) {
+        return <Route path={route.route} element={route.component} key={route.key} />;
       }
 
       return null;
@@ -56,6 +56,8 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
+        <Route path="/pages/landing-pages/blog" element={<Author category="blog" />} />
+        <Route path="/pages/landing-pages/events" element={<Author category="event" />} />
         <Route path="/" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

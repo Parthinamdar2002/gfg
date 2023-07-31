@@ -28,6 +28,9 @@ import Posts from "pages/LandingPages/Author/sections/Posts";
 import Contact from "pages/LandingPages/Author/sections/Contact";
 import Footer from "pages/LandingPages/Author/sections/Footer";
 
+// Proptypes
+import { PropTypes } from "prop-types";
+
 // Routes
 import routes from "routes";
 
@@ -36,15 +39,17 @@ import bgImage from "assets/images/city-profile.jpg";
 
 import { useEffect, useState } from "react";
 
-function isBlog(posts) {
-  console.log("meowww", Object.keys(posts[0].categories).includes("blog"));
+function isBlog(posts, category) {
+  console.log("meowww", Object.keys(posts[0].categories).includes(category), category);
 
-  const out = posts.filter((post) => Object.keys(post.categories).includes("blog"));
+  const out = posts.filter((post) => Object.keys(post.categories).includes(category));
 
   console.log("meowwwest", out);
   return out;
 }
-function Author() {
+function Author(props) {
+  console.log(props);
+  const { category } = props;
   const [current, setCurrent] = useState("you failed!");
   const [posts, setPosts] = useState([]);
   const [otherPosts, setOtherPosts] = useState([]);
@@ -55,7 +60,7 @@ function Author() {
   useEffect(() => {
     fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
       .then((res) => res.json())
-      .then((res) => isBlog(res.posts))
+      .then((res) => isBlog(res.posts, category))
       .then((res) => {
         setPosts(res);
       });
@@ -119,5 +124,13 @@ function Author() {
     </>
   );
 }
+
+Author.defaultProps = {
+  category: "blog",
+};
+
+Author.propTypes = {
+  category: PropTypes.string,
+};
 
 export default Author;

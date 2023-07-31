@@ -289,6 +289,13 @@ const routes = [
             name: "blog",
             route: "/pages/landing-pages/blog",
             component: <Author category="blog" />,
+            renderLater: true,
+          },
+          {
+            name: "events",
+            route: "/pages/landing-pages/events",
+            component: <Author category="event" />,
+            renderLater: true,
           },
         ],
       },
