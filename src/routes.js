@@ -286,9 +286,9 @@ const routes = [
             component: <ContactUs />,
           },
           {
-            name: "author",
-            route: "/pages/landing-pages/author",
-            component: <Author />,
+            name: "blog",
+            route: "/pages/landing-pages/blog",
+            component: <Author category="blog" />,
           },
         ],
       },
