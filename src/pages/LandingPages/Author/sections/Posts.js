@@ -26,8 +26,8 @@ import TransparentBlogCard from "examples/Cards/BlogCards/TransparentBlogCard";
 // import BackgroundBlogCard from "examples/Cards/BlogCards/BackgroundBlogCard";
 
 // Images
-import post1 from "assets/images/examples/testimonial-6-2.jpg";
 /*
+import post1 from "assets/images/examples/testimonial-6-2.jpg";
 import post2 from "assets/images/examples/testimonial-6-3.jpg";
 import post3 from "assets/images/examples/blog-9-4.jpg";
 import post4 from "assets/images/examples/blog2.jpg";
@@ -51,7 +51,7 @@ function Posts(props) {
             // eslint-disable-next-line
             <Grid item xs={12} sm={6} lg={3} onClick={() => setCurrent(post)}>
               <TransparentBlogCard
-                image={post1}
+                image={post.featured_image}
                 title={post.title}
                 description={post.excerpt}
                 action={{

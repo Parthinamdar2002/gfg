@@ -43,6 +43,7 @@ import Icon from "@mui/material/Icon";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Pages
+/*
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
@@ -67,7 +68,7 @@ import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
-
+*/
 const routes = [
   {
     name: "Home",
@@ -114,6 +115,8 @@ const routes = [
   {
     name: "Events",
     icon: <Icon>view_day</Icon>,
+    href: "/events",
+    /*
     collapse: [
       {
         name: "page sections",
@@ -241,12 +244,14 @@ const routes = [
         ],
       },
     ],
+    */
   },
   {
     name: "blog",
     icon: <Icon>article</Icon>,
     columns: 1,
     rowsPerColumn: 2,
+    href: "/blog",
     /*
     collapse: [
       {
@@ -270,7 +275,6 @@ const routes = [
         href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-kit/",
       },
     ],
-    */
     collapse: [
       {
         name: "landing pages",
@@ -291,12 +295,6 @@ const routes = [
             component: <Author category="blog" />,
             renderLater: true,
           },
-          {
-            name: "events",
-            route: "/pages/landing-pages/events",
-            component: <Author category="event" />,
-            renderLater: true,
-          },
         ],
       },
       {
@@ -310,6 +308,7 @@ const routes = [
         ],
       },
     ],
+    */
   },
   /*
   {
