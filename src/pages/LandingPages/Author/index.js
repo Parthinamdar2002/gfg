@@ -72,6 +72,7 @@ function Author(props) {
         return e.ID !== current.ID;
       })
     );
+    window.scrollTo(0, 0, "smooth");
   }, [current]);
   console.log("hahaha", current);
   console.log("hahaha", current);

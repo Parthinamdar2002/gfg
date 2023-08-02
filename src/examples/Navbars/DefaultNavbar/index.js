@@ -56,7 +56,6 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
   useEffect(() => {
@@ -471,7 +470,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
-        <MKBox display="flex" justifyContent="space-around" alignItems="center">
+        <MKBox display="flex" justifyContent="space-between" alignItems="center" padding="0">
           <MKBox
             component={Link}
             to="/"

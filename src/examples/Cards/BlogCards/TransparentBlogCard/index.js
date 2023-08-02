@@ -48,26 +48,15 @@ function TransparentBlogCard({ image, title, description, action }) {
   const imageTemplate = (
     <MKBox position="relative" borderRadius="lg">
       <MKBox
-        component="img"
-        src={image}
         alt={title}
         borderRadius="lg"
         shadow="md"
-        width="12vw"
+        width="17rem"
+        height="17rem"
         position="relative"
         zIndex={1}
-      />
-      <MKBox
-        borderRadius="lg"
-        shadow="md"
-        width="12vw"
-        position="absolute"
-        left={0}
-        top={0}
         sx={{
           backgroundImage: `url(${image})`,
-          transform: "scale(1.1)",
-          filter: "blur(12px)",
           backgroundSize: "cover",
         }}
       />
@@ -82,8 +71,8 @@ function TransparentBlogCard({ image, title, description, action }) {
         overflow: "visible",
       }}
     >
-      {imageTemplate}
-      <MKBox pt={2} pb={3} cursor="pointer">
+      <MKBox pt={2} pb={3} sx={{ cursor: "pointer" }}>
+        {imageTemplate}
         <MKTypography variant="h5" gutterBottom>
           {title}
         </MKTypography>

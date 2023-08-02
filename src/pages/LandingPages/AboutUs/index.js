@@ -12,35 +12,38 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+/*
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 // import Card from "@mui/material/Card";
-
+*/
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
+/*
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
-
+*/
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
 // About Us page sections
 // import Information from "pages/LandingPages/AboutUs/sections/Information";
+/*
 import Team from "pages/LandingPages/AboutUs/sections/Team";
 import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
-
+*/
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
+/*
 import bgImage from "assets/images/bg-about-us.jpg";
 import Card from "assets/theme/components/card";
-
+*/
 function AboutUs() {
   return (
     <>
@@ -55,6 +58,7 @@ function AboutUs() {
         transparent
         light
       />
+      {/*
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -124,6 +128,10 @@ function AboutUs() {
       </Card>
       <Featuring />
       <Newsletter />
+      <MKBox pt={6} px={1} mt={6}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
+      */}
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>
