@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
+/*
 // @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -23,36 +23,116 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+*/
+import { useState } from "react";
 
 function HorizontalTeamCard({ image, name, position, description }) {
+  const [click, setClick] = useState(false);
+  console.log(position);
   return (
-    <Card sx={{ mt: 3 }}>
-      <Grid container>
-        <Grid item xs={12} md={6} lg={4} sx={{ mt: -6 }}>
-          <MKBox width="100%" pt={2} pb={1} px={2}>
-            <MKBox
-              component="img"
-              src={image}
-              alt={name}
-              width="100%"
-              borderRadius="md"
-              shadow="lg"
+    // eslint-disable-next-line
+    <div
+      onMouseEnter={() => setClick(true)}
+      onClick={() => setClick(true)}
+      onMouseLeave={() => setClick(false)}
+      style={{
+        width: "15rem",
+        height: "24rem",
+        backgroundColor: "#d1756f",
+        borderRadius: "1rem",
+        display: "block",
+        overflow: "hidden",
+        padding: "0rem",
+        boxShadow: click ? "0 0 3rem black" : "",
+        transition: "0.3s ease-out",
+        transform: click ? "scale(1.1)" : "",
+        cursor: "pointer",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          height: "100%",
+          width: "100%",
+          display: "block",
+        }}
+      >
+        <div
+          style={{
+            height: click ? "0%" : "100%",
+            padding: click ? "0rem" : "0.5rem",
+            display: "block",
+            overflow: "hidden",
+            transition: "0.3s ease-out",
+            boxSizing: "border-box",
+            filter: click ? "blur(30px)" : "",
+          }}
+        >
+          <img
+            src={image}
+            alt="pfp"
+            width="80%"
+            style={{
+              margin: "0.25rem auto",
+              display: "block",
+              borderRadius: "1rem",
+              boxShadow: "0 0 4px black",
+            }}
+          />
+          <div>
+            <h2 style={{ width: "100%", textAlign: "center", fontFamily: "Poppins" }}>{name}</h2>
+          </div>
+          <hr
+            style={{
+              margin: "1rem auto",
+              border: "none",
+              borderTop: "0.3rem dotted black",
+              fontFamily: "Poppins",
+            }}
+          />
+          <h3 style={{ textAlign: "center", margin: "1rem auto", fontFamily: "Handjet" }}>
+            {position.label}
+          </h3>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#3d2831",
+            padding: "2.5rem",
+            transform: click ? "scale(1.1)" : "",
+            transition: "0.3s ease-in",
+            borderRadius: "1rem",
+            fontFamily: "Roboto Slab",
+            justifyContent: "space-between",
+            alignItems: "space-between",
+            flexDirection: "column",
+            color: "#11d9a4",
+          }}
+        >
+          <div width="100%">
+            <ul>
+              {description.points.map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <hr
+              style={{
+                margin: "1rem auto",
+                border: "none",
+                borderTop: "0.3rem dotted black",
+                fontFamily: "Poppins",
+              }}
             />
-          </MKBox>
-        </Grid>
-        <Grid item xs={12} md={6} lg={8} sx={{ my: "auto" }}>
-          <MKBox pt={{ xs: 1, lg: 2.5 }} pb={2.5} pr={4} pl={{ xs: 4, lg: 1 }} lineHeight={1}>
-            <MKTypography variant="h5">{name}</MKTypography>
-            <MKTypography variant="h6" color={position.color} mb={1}>
-              {position.label}
-            </MKTypography>
-            <MKTypography variant="body2" color="text">
-              {description}
-            </MKTypography>
-          </MKBox>
-        </Grid>
-      </Grid>
-    </Card>
+            socials go here
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -73,7 +153,7 @@ HorizontalTeamCard.propTypes = {
     ]),
     label: PropTypes.string.isRequired,
   }).isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default HorizontalTeamCard;

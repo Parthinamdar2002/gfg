@@ -25,11 +25,13 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
+
 import team1 from "assets/images/team-5.jpg";
+/*
 import team2 from "assets/images/bruce-mars.jpg";
 import team3 from "assets/images/ivana-squares.jpg";
 import team4 from "assets/images/ivana-square.jpg";
-
+*/
 function Team() {
   return (
     <MKBox
@@ -39,7 +41,10 @@ function Team() {
       position="relative"
       py={6}
       px={{ xs: 2, lg: 0 }}
-      mx={-2}
+      sx={{
+        height: "fit-content",
+        width: "100%",
+      }}
     >
       <Container>
         <Grid container>
@@ -53,48 +58,29 @@ function Team() {
             </MKTypography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            height: "max-content",
+            flexWrap: "wrap",
+          }}
+        >
+          {[1, 2, 3, 4].map(() => (
+            <MKBox mb={1} sx={{ margin: "2rem 1rem" }}>
               <HorizontalTeamCard
                 image={team1}
                 name="Emma Roberts"
                 position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description={{
+                  points: ["HOHOHO", "hahaha"],
+                  socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },
+                }}
               />
             </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-        </Grid>
+          ))}
+        </div>
       </Container>
     </MKBox>
   );
