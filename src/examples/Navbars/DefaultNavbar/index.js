@@ -20,7 +20,6 @@ import { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import gfg from "assets/images/gfg-gg-logo.svg";
-import mgm from "assets/images/LogoMGM.svg";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -46,7 +45,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ routes, transparent, light, sticky, relative, center, gfgLogo, mgmLogo }) {
+function DefaultNavbar({ routes, transparent, light, sticky, relative, center, gfgLogo }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -492,30 +491,6 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
                 placeItems: "center",
               }}
             />
-            <MKBox
-              width="fit-content"
-              display="inline-flex"
-              height="100%"
-              justifyContent="center"
-              alignItems="center"
-              fontWeight="100"
-              fontSize="2rem"
-              color="black"
-            >
-              <span>✕</span>
-            </MKBox>
-            <MKBox
-              minHeight="9vh"
-              width="9vh"
-              sx={{
-                backgroundImage: `url(${mgmLogo})`,
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                display: "inline-block",
-                placeItems: "center",
-              }}
-            />
           </MKBox>
           <MKBox
             color="inherit"
@@ -598,7 +573,6 @@ DefaultNavbar.defaultProps = {
   relative: false,
   center: false,
   gfgLogo: gfg,
-  mgmLogo: mgm,
 };
 
 // Typechecking props for the DefaultNavbar
@@ -630,7 +604,6 @@ DefaultNavbar.propTypes = {
   ]),
   */
   gfgLogo: PropTypes.string,
-  mgmLogo: PropTypes.string,
   sticky: PropTypes.bool,
   relative: PropTypes.bool,
   center: PropTypes.bool,
