@@ -16,12 +16,11 @@ Coded by www.creative-tim.com
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKAvatar from "components/MKAvatar";
-import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 // Images
 // import profilePicture from "assets/images/gfg-gg-logo.svg";
@@ -46,14 +45,11 @@ function Profile(props) {
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
               <MKBox display="flex" justifyContent="space-between" alignItems="center" mb={1}>
                 <MKTypography variant="h3">{current.title}</MKTypography>
-                <MKButton variant="outlined" color="info" size="small">
-                  Follow
-                </MKButton>
               </MKBox>
               <Grid container spacing={3} mb={3}>
                 <Grid item>
                   <MKTypography component="span" variant="body2" fontWeight="bold">
-                    323&nbsp;
+                    0&nbsp;
                   </MKTypography>
                   <MKTypography component="span" variant="body2" color="text">
                     Posts
@@ -61,7 +57,7 @@ function Profile(props) {
                 </Grid>
                 <Grid item>
                   <MKTypography component="span" variant="body2" fontWeight="bold">
-                    3.5k&nbsp;
+                    0&nbsp;
                   </MKTypography>
                   <MKTypography component="span" variant="body2" color="text">
                     Followers
@@ -69,7 +65,7 @@ function Profile(props) {
                 </Grid>
                 <Grid item>
                   <MKTypography component="span" variant="body2" fontWeight="bold">
-                    260&nbsp;
+                    0&nbsp;
                   </MKTypography>
                   <MKTypography component="span" variant="body2" color="text">
                     Following
@@ -100,7 +96,7 @@ function Profile(props) {
                     },
                   }}
                 >
-                  More about me <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+                  {/* More about me <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon> */}
                 </MKTypography>
               </MKTypography>
             </Grid>

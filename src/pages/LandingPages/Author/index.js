@@ -25,8 +25,6 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 // Author page sections
 import Profile from "pages/LandingPages/Author/sections/Profile";
 import Posts from "pages/LandingPages/Author/sections/Posts";
-import Contact from "pages/LandingPages/Author/sections/Contact";
-import Footer from "pages/LandingPages/Author/sections/Footer";
 
 // Proptypes
 import { PropTypes } from "prop-types";
@@ -38,6 +36,8 @@ import routes from "routes";
 import bgImage from "assets/images/city-profile.jpg";
 
 import { useEffect, useState } from "react";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+import footerRoutes from "footer.routes";
 
 function isBlog(posts, category) {
   console.log("meowww", Object.keys(posts[0].categories).includes(category), category);
@@ -72,10 +72,8 @@ function Author(props) {
         return e.ID !== current.ID;
       })
     );
-    window.scrollTo(0, 0, "smooth");
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [current]);
-  console.log("hahaha", current);
-  console.log("hahaha", current);
   return (
     <>
       <DefaultNavbar
@@ -119,8 +117,7 @@ function Author(props) {
           <Profile current={current} />
           <Posts posts={otherPosts} setCurrent={setCurrent} />
         </Card>
-        <Contact />
-        <Footer />
+        <DefaultFooter content={footerRoutes} />
       </MKBox>
     </>
   );

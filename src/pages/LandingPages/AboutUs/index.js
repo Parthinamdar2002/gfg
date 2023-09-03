@@ -27,8 +27,6 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // About Us page sections
 // import Information from "pages/LandingPages/AboutUs/sections/Information";
 import Team from "pages/LandingPages/AboutUs/sections/Team";
-import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
-import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
@@ -117,11 +115,6 @@ function AboutUs() {
       <Card style={{ width: "100%" }}>
         <Team />
       </Card>
-      <Featuring />
-      <Newsletter />
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
-      </MKBox>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>
