@@ -1,0 +1,53 @@
+.parent {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  scroll-snap-align: center;
+  overflow: hidden;
+}
+.card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transition: 1s ease;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.left,
+.right {
+  position: absolute;
+  top: 50%;
+  height: 8rem;
+  width: 4rem;
+  transform: translate(0, -50%);
+  background-color: rgba(0, 255, 110, 0.702);
+  z-index: 10;
+  backdrop-filter: blur(24px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+}
+.left {
+  border-radius: 0 0.5rem 0.5rem 0;
+  left: 0;
+}
+.right {
+  border-radius: 0.5rem 0 0 0.5rem;
+  left: calc(100vw - 4rem);
+}
+.left:hover, .right:hover {
+  transform: translate(0, -50%) scale(1.2);
+}
+.left:hover > img {
+  transform: translate(-10%, 0);
+}
+.right:hover > img {
+  transform: translate(10%, 0);
+}
+
+img {
+  height: 3rem;
+  transition: 0.2s ease-out;
+}

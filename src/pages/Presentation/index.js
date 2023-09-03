@@ -46,6 +46,7 @@ import bgImage from "assets/images/bg-presentation-transformed.jpeg";
 import bgImage2 from "assets/images/bg-presentation-2.jpg";
 import gfgLogo from "assets/images/gfg-logo.png";
 import { motion } from "framer-motion";
+import Slider from "./Slider";
 // import Spline from "@splinetool/react-spline";
 
 // https://prod.spline.design/KyZHmy1h68qr0uNW/scene.splinecode
@@ -277,6 +278,7 @@ function Presentation() {
           </p>
         </motion.div>
       </MKBox>
+      <Slider />
       <MKBox pt={6} px={1} mt={6} style={{ scrollSnapAlign: "center" }}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>
