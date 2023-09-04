@@ -5,14 +5,20 @@
   scroll-snap-align: center;
   overflow: hidden;
 }
-.card {
+.cardLeft,
+.cardRight {
   height: 100%;
-  width: 100%;
+  width: 50%;
   position: absolute;
   top: 0;
   transition: 1s ease;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center center;
+  overflow: hidden;
+}
+.cardRight {
+  left: 50%;
 }
 .left,
 .right {
@@ -21,13 +27,14 @@
   height: 8rem;
   width: 4rem;
   transform: translate(0, -50%);
-  background-color: rgba(0, 255, 110, 0.702);
+  background-color: #ffffe8af;
   z-index: 10;
   backdrop-filter: blur(24px);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.4s ease;
+  cursor: pointer;
 }
 .left {
   border-radius: 0 0.5rem 0.5rem 0;
@@ -37,17 +44,38 @@
   border-radius: 0.5rem 0 0 0.5rem;
   left: calc(100vw - 4rem);
 }
-.left:hover, .right:hover {
+.left:hover,
+.right:hover {
   transform: translate(0, -50%) scale(1.2);
 }
 .left:hover > img {
-  transform: translate(-10%, 0);
+  transform: translate(-15%, 0);
 }
 .right:hover > img {
-  transform: translate(10%, 0);
+  transform: translate(15%, 0);
 }
 
 img {
   height: 3rem;
   transition: 0.2s ease-out;
+}
+
+.cardLeft h1,
+.cardRight h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: block;
+  white-space: nowrap;
+  font-size: 10vw;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.321);
+  font-family: 'Poppins', sans-serif;
+}
+.cardLeft h1 {
+  left: 50vw;
+  top: 50vh;
+}
+.cardRight h1 {
+  left: 0vw;
+  top: 50vh;
 }
