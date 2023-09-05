@@ -33,8 +33,8 @@ function HorizontalTeamCard({ image, name, position, description }) {
     // eslint-disable-next-line
     <div
       onMouseEnter={() => setClick(true)}
-      onClick={() => setClick(true)}
       onMouseLeave={() => setClick(false)}
+      onTouchStart={() => setClick(!click)}
       style={{
         width: "15rem",
         height: "24rem",
@@ -59,24 +59,27 @@ function HorizontalTeamCard({ image, name, position, description }) {
       >
         <div
           style={{
-            height: click ? "0%" : "100%",
-            padding: click ? "0rem" : "0.5rem",
+            height: "100%",
+            padding: click ? "0rem" : "2rem 0.5rem",
             display: "block",
             overflow: "hidden",
             transition: "0.3s ease-out",
             boxSizing: "border-box",
-            filter: click ? "blur(30px)" : "",
+            filter: click ? "blur(20px)" : "",
           }}
         >
-          <img
-            src={image}
+          <div
             alt="pfp"
-            width="80%"
             style={{
               margin: "0.25rem auto",
               display: "block",
-              borderRadius: "1rem",
+              borderRadius: "1000rem",
               boxShadow: "0 0 4px black",
+              width: "10rem",
+              height: "10rem",
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           />
           <div>
@@ -96,11 +99,11 @@ function HorizontalTeamCard({ image, name, position, description }) {
         </div>
         <div
           style={{
-            position: "relative",
+            position: "absolute",
             display: "flex",
             width: "100%",
             height: "100%",
-            backgroundColor: "#3d2831",
+            backgroundColor: "#3d283144",
             padding: "2.5rem",
             transform: click ? "scale(1.1)" : "",
             transition: "0.3s ease-in",
@@ -110,6 +113,8 @@ function HorizontalTeamCard({ image, name, position, description }) {
             alignItems: "space-between",
             flexDirection: "column",
             color: "#11d9a4",
+            top: click ? "0" : "100%",
+            backdropFilter: "blur(240px)",
           }}
         >
           <div width="100%">

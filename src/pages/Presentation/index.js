@@ -21,6 +21,7 @@ import MKTypography from "components/MKTypography";
 // import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
+import { useInView } from "framer-motion";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 // import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
@@ -45,11 +46,11 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/bg-presentation-transformed.jpeg";
 import bgImage2 from "assets/images/bg-presentation-2.jpg";
 import gfgLogo from "assets/images/gfg-logo.png";
-import { motion } from "framer-motion";
 import Slider from "./Slider";
 // import Spline from "@splinetool/react-spline";
 
 // https://prod.spline.design/KyZHmy1h68qr0uNW/scene.splinecode
+import styles from "./Index.module.css";
 
 function Presentation() {
   const [ref, inView] = useInView({});
@@ -68,7 +69,6 @@ function Presentation() {
       />
       <MKBox
         minHeight="100vh"
-        padding="10vh 5vw 10vh 5vw"
         height="max-content"
         width="100%"
         sx={{
@@ -87,13 +87,14 @@ function Presentation() {
           style={{
             background: "#d9d9d911",
             height: "max-content",
-            width: "40vw",
+            width: "min(40rem, 100vw)",
             display: "block",
             padding: "3rem 1rem",
             borderRadius: "2rem",
             backdropFilter: "blur(24px)",
             boxShadow: "0 0 10rem black",
           }}
+          className={styles.responsive}
         >
           <Grid
             container
@@ -113,7 +114,7 @@ function Presentation() {
               textAlign="center"
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
+                  fontSize: size["2xl"],
                 },
               })}
             >
@@ -215,46 +216,30 @@ function Presentation() {
               }}
             />
           </div>
-          <motion.h1
+          <h1
             style={{
               fontFamily: "'JetBrains Mono'",
               fontWeight: "800",
               textAlign: "center",
               width: "100%",
               color: "#dddddd",
+              fontSize: "clamp(2rem, 7vw, 10rem)",
+              padding: "4rem",
             }}
           >
-            {"One Learns. Many Create.".split("").map((char, index) => (
-              <motion.span
-                style={{ display: "inline-block", minWidth: "1rem", fontSize: "3vw", margin: "0" }}
-                initial={{ opacity: 0, x: 1000, y: -50 }}
-                animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 1000, y: inView ? 0 : -50 }}
-                transition={{ delay: index * 0.05, type: "spring", stiffness: 25 }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.h1>
+            One Learns. Many Create.
+          </h1>
           <p
             style={{
               fontFamily: "'JetBrains Mono",
               margin: "2rem",
               color: "#d7f2ba",
               fontSize: "0.8em",
+              textAlign: "justify",
             }}
           >
-            {"We LOVE creating awesome things! You could help our team of playful creators by joining us."
-              .split("")
-              .map((char, index) => (
-                <motion.span
-                  style={{ display: "inline-block", minWidth: "1rem" }}
-                  initial={{ opacity: 0, x: 1000, y: -50 }}
-                  animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 1000, y: inView ? 0 : -50 }}
-                  transition={{ delay: index * 0.025, type: "spring", stiffness: 50 }}
-                >
-                  {char}
-                </motion.span>
-              ))}
+            We LOVE creating awesome things! You could help our team of playful creators by joining
+            us.
           </p>
           <p
             style={{
@@ -265,16 +250,7 @@ function Presentation() {
               fontWeight: "800",
             }}
           >
-            {"gfgJnecTeamCount++".split("").map((char, index) => (
-              <motion.span
-                style={{ display: "inline-block", minWidth: "1rem" }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: inView ? 1 : 0 }}
-                transition={{ delay: index * 0.025 + 3, type: "spring", stiffness: 50 }}
-              >
-                {char}
-              </motion.span>
-            ))}
+            gfgJnecTeamCount++
           </p>
         </motion.div>
       </MKBox>
