@@ -15,13 +15,13 @@
 import Grid from "@mui/material/Grid";
 // import Card from "@mui/material/Card";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 // import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
-import { useInView } from "framer-motion";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 // import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
@@ -137,7 +137,6 @@ function Presentation() {
       </MKBox>
       <MKBox
         minHeight="100vh"
-        padding="10vh 5vw 10vh 5vw"
         height="max-content"
         width="100%"
         sx={{
@@ -156,14 +155,12 @@ function Presentation() {
           ref={ref}
           initial={{ x: -1000 }}
           style={{
-            minHeight: "60vh",
-            height: "max-content",
-            width: "70vw",
+            height: "50vh",
+            width: "min(40rem, 100vw)",
             background: "#00000022",
             borderRadius: "1rem",
-            padding: "3rem",
             position: "relative",
-            overflow: "hidden",
+            overflow: "scroll",
             backdropFilter: "blur(24px)",
           }}
           animate={{
@@ -176,16 +173,17 @@ function Presentation() {
         >
           <div
             style={{
-              position: "absolute",
+              position: "sticky",
               height: "10%",
               width: "100%",
+              left: "0",
+              top: "0",
               background: "#1d2021",
-              top: "0%",
-              left: "0%",
               display: "flex",
               justifyContent: "flex-start",
               alignItems: "center",
               padding: " 0 0.5rem",
+              margin: "0",
             }}
           >
             <div
@@ -223,7 +221,7 @@ function Presentation() {
               textAlign: "center",
               width: "100%",
               color: "#dddddd",
-              fontSize: "clamp(2rem, 7vw, 10rem)",
+              fontSize: "clamp(2rem, 6vw, 4rem)",
               padding: "4rem",
             }}
           >
@@ -236,21 +234,14 @@ function Presentation() {
               color: "#d7f2ba",
               fontSize: "0.8em",
               textAlign: "justify",
+              padding: "2.5rem",
             }}
           >
-            We LOVE creating awesome things! You could help our team of playful creators by joining
-            us.
-          </p>
-          <p
-            style={{
-              fontFamily: "'JetBrains Mono",
-              margin: "2rem",
-              color: "#D6D4A0",
-              fontSize: "1em",
-              fontWeight: "800",
-            }}
-          >
-            gfgJnecTeamCount++
+            Geeks for Geeks Student Chapter MGMU is a student-led organization that aims to promote
+            the culture of coding and technology among young people. GFG MGMU provides students with
+            a supportive and inclusive environment where they can learn and develop their technical
+            skills, discuss the latest industry trends, network with peers and engage in coding
+            challenges.
           </p>
         </motion.div>
       </MKBox>
