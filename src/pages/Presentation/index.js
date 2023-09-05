@@ -13,12 +13,12 @@
 // @mui material components
 // import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import advaGFG from "assets/images/GFG_hori_stroke.png";
 // import Card from "@mui/material/Card";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
 // import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
@@ -96,30 +96,17 @@ function Presentation() {
           }}
           className={styles.responsive}
         >
-          <Grid
-            container
-            item
-            xs={12}
-            lg={7}
-            alignItems="center"
-            justifyContent="center"
-            mx="auto"
-            marginTop="20vh"
-          >
-            <MKTypography
-              variant="h1"
-              color="black"
-              mt={-20}
-              mb={1}
-              textAlign="center"
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: {
-                  fontSize: size["2xl"],
-                },
-              })}
-            >
-              GFGxMGMU
-            </MKTypography>
+          <Grid container item xs={12} lg={7} alignItems="center" justifyContent="center" mx="auto">
+            <img
+              alt=""
+              src={advaGFG}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "2rem auto",
+                filter: "drop-shadow(0px 0px 20px #fff)",
+              }}
+            />
             <div
               style={{
                 width: "100%",
