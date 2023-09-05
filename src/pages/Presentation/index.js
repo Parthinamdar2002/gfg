@@ -87,7 +87,7 @@ function Presentation() {
           style={{
             background: "#d9d9d911",
             height: "max-content",
-            width: "min(40rem, 100vw)",
+            width: "min(40rem, 90vw)",
             display: "block",
             padding: "3rem 1rem",
             borderRadius: "2rem",
@@ -143,12 +143,12 @@ function Presentation() {
           initial={{ x: -1000 }}
           style={{
             height: "50vh",
-            width: "min(40rem, 100vw)",
+            width: "min(40rem, 90vw)",
             background: "#00000022",
             borderRadius: "1rem",
             position: "relative",
-            overflow: "scroll",
             backdropFilter: "blur(24px)",
+            overflow: "hidden",
           }}
           animate={{
             x: inView ? 0 : -100,
@@ -160,7 +160,7 @@ function Presentation() {
         >
           <div
             style={{
-              position: "sticky",
+              position: "absolute",
               height: "10%",
               width: "100%",
               left: "0",
@@ -201,35 +201,42 @@ function Presentation() {
               }}
             />
           </div>
-          <h1
+          <div
             style={{
-              fontFamily: "'JetBrains Mono'",
-              fontWeight: "800",
-              textAlign: "center",
-              width: "100%",
-              color: "#dddddd",
-              fontSize: "clamp(2rem, 6vw, 4rem)",
-              padding: "4rem",
+              overflowY: "scroll",
+              height: "100%",
             }}
           >
-            One Learns. Many Create.
-          </h1>
-          <p
-            style={{
-              fontFamily: "'JetBrains Mono",
-              margin: "2rem",
-              color: "#d7f2ba",
-              fontSize: "0.8em",
-              textAlign: "justify",
-              padding: "2.5rem",
-            }}
-          >
-            Geeks for Geeks Student Chapter MGMU is a student-led organization that aims to promote
-            the culture of coding and technology among young people. GFG MGMU provides students with
-            a supportive and inclusive environment where they can learn and develop their technical
-            skills, discuss the latest industry trends, network with peers and engage in coding
-            challenges.
-          </p>
+            <h1
+              style={{
+                fontFamily: "'JetBrains Mono'",
+                fontWeight: "800",
+                textAlign: "center",
+                width: "100%",
+                color: "#dddddd",
+                fontSize: "clamp(2rem, 6vw, 4rem)",
+                padding: "4rem",
+              }}
+            >
+              One Learns. Many Create.
+            </h1>
+            <p
+              style={{
+                fontFamily: "'JetBrains Mono",
+                margin: "2rem",
+                color: "#d7f2ba",
+                fontSize: "0.8em",
+                textAlign: "justify",
+                padding: "2.5rem",
+              }}
+            >
+              Geeks for Geeks Student Chapter MGMU is a student-led organization that aims to
+              promote the culture of coding and technology among young people. GFG MGMU provides
+              students with a supportive and inclusive environment where they can learn and develop
+              their technical skills, discuss the latest industry trends, network with peers and
+              engage in coding challenges.
+            </p>
+          </div>
         </motion.div>
       </MKBox>
       <Slider />
