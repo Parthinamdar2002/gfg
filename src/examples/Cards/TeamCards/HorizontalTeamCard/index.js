@@ -105,7 +105,7 @@ function HorizontalTeamCard({ image, name, position, description }) {
             height: "100%",
             backgroundColor: "#3d283144",
             padding: "2.5rem",
-            transform: click ? "scale(1.1)" : "",
+            // transform: click ? "scale(1.1)" : "",
             transition: "0.3s ease-in",
             borderRadius: "1rem",
             fontFamily: "Roboto Slab",

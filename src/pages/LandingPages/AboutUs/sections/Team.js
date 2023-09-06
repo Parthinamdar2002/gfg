@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import { Tilt } from "react-tilt";
 
 // Material Kit 2 React examples
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
@@ -69,15 +70,17 @@ function Team() {
         >
           {[1, 2, 3, 4].map(() => (
             <MKBox mb={1} sx={{ margin: "2rem 1rem" }}>
-              <HorizontalTeamCard
-                image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description={{
-                  points: ["HOHOHO", "hahaha"],
-                  socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },
-                }}
-              />
+              <Tilt options={{ reverse: true, perspective: 1000, max: 25 }}>
+                <HorizontalTeamCard
+                  image={team1}
+                  name="Emma Roberts"
+                  position={{ color: "info", label: "UI Designer" }}
+                  description={{
+                    points: ["HOHOHO", "hahaha"],
+                    socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },
+                  }}
+                />
+              </Tilt>
             </MKBox>
           ))}
         </div>
