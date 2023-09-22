@@ -24,11 +24,11 @@ import { Tilt } from "react-tilt";
 
 // Material Kit 2 React examples
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
-
+import data from "./TeamData";
 // Images
-
-import team1 from "assets/images/team-5.jpg";
 /*
+import data from "./TeamData";
+import team1 from "assets/images/team-5.jpg";
 import team2 from "assets/images/bruce-mars.jpg";
 import team3 from "assets/images/ivana-squares.jpg";
 import team4 from "assets/images/ivana-square.jpg";
@@ -37,7 +37,9 @@ function Team() {
   return (
     <MKBox
       component="section"
-      variant="gradient"
+      style={{
+        backgroundImage: "url(https://th.bing.com/th/id/OIG.VwkYgXsfAxmEotaGjKhG?pid=ImgGn",
+      }}
       bgColor="dark"
       position="relative"
       py={6}
@@ -68,21 +70,24 @@ function Team() {
             flexWrap: "wrap",
           }}
         >
-          {[1, 2, 3, 4].map(() => (
-            <MKBox mb={1} sx={{ margin: "2rem 1rem" }}>
-              <Tilt options={{ reverse: true, perspective: 1000, max: 25 }}>
-                <HorizontalTeamCard
-                  image={team1}
-                  name="Emma Roberts"
-                  position={{ color: "info", label: "UI Designer" }}
-                  description={{
-                    points: ["HOHOHO", "hahaha"],
-                    socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },
-                  }}
-                />
-              </Tilt>
-            </MKBox>
-          ))}
+          {data.map((member) => {
+            console.log(member);
+            return (
+              <MKBox mb={1} sx={{ margin: "2rem 1rem" }}>
+                <Tilt options={{ reverse: true, perspective: 1000, max: 25 }}>
+                  <HorizontalTeamCard
+                    image={member.img}
+                    name={member.Name}
+                    position={{ color: "info", label: member.Designation }}
+                    description={{
+                      points: ["HOHOHO", "hahaha"],
+                      socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },
+                    }}
+                  />
+                </Tilt>
+              </MKBox>
+            );
+          })}
         </div>
       </Container>
     </MKBox>

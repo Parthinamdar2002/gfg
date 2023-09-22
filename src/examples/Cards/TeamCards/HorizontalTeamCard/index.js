@@ -38,7 +38,7 @@ function HorizontalTeamCard({ image, name, position, description }) {
       style={{
         width: "15rem",
         height: "24rem",
-        backgroundColor: "#d1756f",
+        background: "linear-gradient(30deg, rgba(255,212,0,1) 0%, rgba(92,83,173,1) 100%)",
         borderRadius: "1rem",
         display: "block",
         overflow: "hidden",
@@ -83,19 +83,39 @@ function HorizontalTeamCard({ image, name, position, description }) {
             }}
           />
           <div>
-            <h2 style={{ width: "100%", textAlign: "center", fontFamily: "Poppins" }}>{name}</h2>
+            <h2
+              style={{
+                width: "100%",
+                textAlign: "center",
+                fontFamily: "Poppins",
+                fontSize: "2.5vh",
+                margin: "5vh 0",
+              }}
+            >
+              {name}
+            </h2>
           </div>
-          <hr
+          <div
             style={{
-              margin: "1rem auto",
-              border: "none",
-              borderTop: "0.3rem dotted black",
-              fontFamily: "Poppins",
+              position: "absolute",
+              bottom: "0",
+              width: "100%",
+              left: "0",
             }}
-          />
-          <h3 style={{ textAlign: "center", margin: "1rem auto", fontFamily: "Handjet" }}>
-            {position.label}
-          </h3>
+          >
+            <hr
+              style={{
+                margin: "1rem auto",
+                border: "none",
+                borderTop: "0.3rem dotted black",
+                fontFamily: "Poppins",
+                width: "80%",
+              }}
+            />
+            <h3 style={{ textAlign: "center", margin: "1rem auto", fontFamily: "Handjet" }}>
+              {position.label}
+            </h3>
+          </div>
         </div>
         <div
           style={{
@@ -114,7 +134,8 @@ function HorizontalTeamCard({ image, name, position, description }) {
             flexDirection: "column",
             color: "#11d9a4",
             top: click ? "0" : "100%",
-            backdropFilter: "blur(240px)",
+            transform: "translateZ(20rem)",
+            backdropFilter: "blur(10px)",
           }}
         >
           <div width="100%">
