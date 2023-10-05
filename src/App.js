@@ -57,9 +57,9 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/blog" element={<Author category="blog" />} />
-        <Route path="/events" element={<Author category="event" />} />
-        <Route path="/team" element={<AboutUs />} />
+        <Route path="/gfg/blog" element={<Author category="blog" />} />
+        <Route path="/gfg/events" element={<Author category="event" />} />
+        <Route path="/gfg/team" element={<AboutUs />} />
         <Route path="/gfg" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/404.html" />} />
       </Routes>

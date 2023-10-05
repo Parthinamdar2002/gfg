@@ -43,8 +43,8 @@ import Icon from "@mui/material/Icon";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Pages
-import AboutUs from "layouts/pages/landing-pages/about-us";
 /*
+import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
@@ -75,7 +75,7 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     columns: 1,
     rowsPerColumn: 2,
-    href: "/",
+    href: "/gfg",
     /*
     collapse: [
       {
@@ -115,7 +115,7 @@ const routes = [
   {
     name: "Events",
     icon: <Icon>view_day</Icon>,
-    href: "/events",
+    href: "/gfg/events",
     /*
     collapse: [
       {
@@ -251,8 +251,16 @@ const routes = [
     icon: <Icon>article</Icon>,
     columns: 1,
     rowsPerColumn: 2,
-    href: "/blog",
-    /*
+    href: "/gfg/blog",
+  },
+  {
+    name: "tem",
+    icon: <Icon>team</Icon>,
+    columns: 1,
+    rowsPerColumn: 2,
+    href: "/gfg/team",
+  },
+  /*
     collapse: [
       {
         name: "getting started",
@@ -308,14 +316,12 @@ const routes = [
         ],
       },
     ],
-    */
   },
   {
     name: "Meet The Team",
     route: "/pages/landing-pages/about-us",
     component: <AboutUs />,
   },
-  /*
   {
     name: "github",
     icon: <GitHubIcon />,
