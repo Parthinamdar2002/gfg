@@ -60,8 +60,8 @@ export default function App() {
         <Route path="/blog" element={<Author category="blog" />} />
         <Route path="/events" element={<Author category="event" />} />
         <Route path="/team" element={<AboutUs />} />
-        <Route path="/" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/gfg" element={<Presentation />} />
+        <Route path="*" element={<Navigate to="/404.html" />} />
       </Routes>
     </ThemeProvider>
   );

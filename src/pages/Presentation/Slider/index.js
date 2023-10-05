@@ -82,7 +82,7 @@ function Slider() {
           ></div>
           <div
             style={{ backgroundImage: `url(${cardState})`, top: `${(index - i) * 100}vh` }}
-            className={styles.cardRight}
+              className={styles.cardRight}
           ></div>
         </>
       ))}
