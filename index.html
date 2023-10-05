@@ -1,1 +1,85 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/gfg/favicon.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#1A73E8"/><link rel="apple-touch-icon" sizes="76x76" href="/gfg/apple-icon.png"/><link rel="manifest" href="/gfg/manifest.json"/><title>GFG's MGMU Student Chapter</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/><script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script><script defer="defer" src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script><script defer="defer" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><link href="/gfg/static/css/main.9f9eea48.chunk.css" rel="stylesheet"></head><body style="overflow-y:hidden"><noscript>You need to enable JavaScript to run this app.</noscript><div id="root" style="scroll-snap-type:y mandatory;overflow-y:scroll;height:100vh"></div><script>!function(e){function t(t){for(var n,a,i=t[0],l=t[1],f=t[2],p=0,s=[];p<i.length;p++)a=i[p],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&s.push(o[a][0]),o[a]=0;for(n in l)Object.prototype.hasOwnProperty.call(l,n)&&(e[n]=l[n]);for(c&&c(t);s.length;)s.shift()();return u.push.apply(u,f||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,i=1;i<r.length;i++){var l=r[i];0!==o[l]&&(n=!1)}n&&(u.splice(t--,1),e=a(a.s=r[0]))}return e}var n={},o={1:0},u=[];function a(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,a),r.l=!0,r.exports}a.m=e,a.c=n,a.d=function(e,t,r){a.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,t){if(1&t&&(e=a(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(a.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)a.d(r,n,function(t){return e[t]}.bind(null,n));return r},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/gfg/";var i=this["webpackJsonpmaterial-kit-2-react"]=this["webpackJsonpmaterial-kit-2-react"]||[],l=i.push.bind(i);i.push=t,i=i.slice();for(var f=0;f<i.length;f++)t(i[f]);var c=l;r()}([])</script><script src="/gfg/static/js/2.9cafe498.chunk.js"></script><script src="/gfg/static/js/main.542778ae.chunk.js"></script></body></html>
+Html Webpack Plugin:
+<pre>
+  Error: html-webpack-plugin could not minify the generated output.
+  In production mode the html minifcation is enabled by default.
+  If you are not generating a valid html output please disable it manually.
+  You can do so by adding the following setting to your HtmlWebpackPlugin config:
+  |
+  |    minify: false
+  |
+  See https://github.com/jantimon/html-webpack-plugin#options for details.
+  For parser dedicated bugs please create an issue here:
+  https://danielruf.github.io/html-minifier-terser/
+  Parse Error: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Robot  o+Slab:400,700" /
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300&family=Lato:ital,wght@0,100;0,300;0,40  0;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,8  00;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700  ;800;900&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,  700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|M  aterial+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Alpine Plugins -->
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  <link href="/gfg/static/css/main.d27b1a09.chunk.css" rel="stylesheet"></head>
+  <body style="overflow-y: hidden">
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="scroll-snap-type: y mandatory; overflow-y: scroll; height: 100vh"></div>
+  <script>!function(e){function t(t){for(var n,a,i=t[0],l=t[1],f=t[2],p=0,s=[];p<i.length;p++)a=i[p],Object.prototyp  e.hasOwnProperty.call(o,a)&&o[a]&&s.push(o[a][0]),o[a]=0;for(n in l)Object.prototype.hasOwnProperty.call(l,n)&&(e[  n]=l[n]);for(c&&c(t);s.length;)s.shift()();return u.push.apply(u,f||[]),r()}function r(){for(var e,t=0;t<u.length;  t++){for(var r=u[t],n=!0,i=1;i<r.length;i++){var l=r[i];0!==o[l]&&(n=!1)}n&&(u.splice(t--,1),e=a(a.s=r[0]))}return   e}var n={},o={1:0},u=[];function a(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].ca  ll(r.exports,r,r.exports,a),r.l=!0,r.exports}a.m=e,a.c=n,a.d=function(e,t,r){a.o(e,t)||Object.defineProperty(e,t,{  enumerable:!0,get:r})},a.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Sy  mbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,t){if(1&t&&(e=  a(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(a.r(r),Objec  t.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)a.d(r,n,function(t){r  eturn e[t]}.bind(null,n));return r},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){  return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/gfg/";v  ar i=this["webpackJsonpmaterial-kit-2-react"]=this["webpackJsonpmaterial-kit-2-react"]||[],l=i.push.bind(i);i.push  =t,i=i.slice();for(var f=0;f<i.length;f++)t(i[f]);var c=l;r()}([]);
+  //# sourceMappingURL=runtime-main.e038bcd8.js.map</script><script src="/gfg/static/js/2.ac860dbb.chunk.js"></scrip  t><script src="/gfg/static/js/main.a4d2ec48.chunk.js"></script></body>
+  </html>
+  
+  - htmlparser.js:244 new HTMLParser
+    [gfg]/[html-minifier-terser]/src/htmlparser.js:244:13
+  
+  - htmlminifier.js:993 minify
+    [gfg]/[html-minifier-terser]/src/htmlminifier.js:993:3
+  
+  - htmlminifier.js:1354 Object.exports.minify
+    [gfg]/[html-minifier-terser]/src/htmlminifier.js:1354:16
+  
+  - index.js:1013 HtmlWebpackPlugin.minifyHtml
+    [gfg]/[html-webpack-plugin]/index.js:1013:46
+  
+  - index.js:429 HtmlWebpackPlugin.postProcessHtml
+    [gfg]/[html-webpack-plugin]/index.js:429:40
+  
+  - index.js:254 
+    [gfg]/[html-webpack-plugin]/index.js:254:25
+  
+  - task_queues:96 processTicksAndRejections
+    node:internal/process/task_queues:96:5
+  
+</pre>
