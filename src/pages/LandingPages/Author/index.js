@@ -34,6 +34,7 @@ import routes from "routes";
 
 // Images
 import bgImage from "assets/images/city-profile.jpg";
+import bgImage2 from "assets/images/robots.jpg";
 
 import { useEffect, useState } from "react";
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -58,7 +59,9 @@ function Author(props) {
     setCurrent(posts[0]);
   }, [posts]);
   useEffect(() => {
-    fetch("https://public-api.wordpress.com/rest/v1.1/sites/thebokya.wordpress.com/posts/")
+    fetch(
+      "https://public-api.wordpress.com/rest/v1/sites/geeksforgeeks7d7a6927b31.wordpress.com/posts"
+    )
       .then((res) => res.json())
       .then((res) => isBlog(res.posts, category))
       .then((res) => {
@@ -96,7 +99,7 @@ function Author(props) {
               `${linearGradient(
                 rgba(gradients.dark.main, 0.8),
                 rgba(gradients.dark.state, 0.8)
-              )}, url(${bgImage})`,
+              )}, url(${category === "Blog" ? bgImage : bgImage2})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             display: "grid",

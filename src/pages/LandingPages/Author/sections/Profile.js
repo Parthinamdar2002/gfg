@@ -72,7 +72,20 @@ function Profile(props) {
                   </MKTypography>
                 </Grid>
               </Grid>
-              <MKTypography variant="body1" fontWeight="light" color="text">
+              <MKTypography
+                variant="body1"
+                fontWeight="light"
+                color="text"
+                sx={{
+                  "&": { width: "100%", textAlign: "justify" },
+                  "& img, & video": {
+                    display: "block",
+                    width: "90%",
+                    height: "auto",
+                    margin: "4rem auto",
+                  },
+                }}
+              >
                 <div dangerouslySetInnerHTML={{ __html: current.content }} />
                 <MKTypography
                   component="a"

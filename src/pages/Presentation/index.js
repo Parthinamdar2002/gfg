@@ -43,8 +43,8 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation-transformed.jpeg";
-import bgImage2 from "assets/images/bg-presentation-2.jpg";
+import bgImage from "assets/images/bg2.gif";
+import bgImage2 from "assets/images/bg1.gif";
 import gfgLogo from "assets/images/gfg-logo.png";
 import Slider from "./Slider";
 // import Spline from "@splinetool/react-spline";
@@ -216,6 +216,10 @@ function Presentation() {
                 color: "#dddddd",
                 fontSize: "clamp(2rem, 6vw, 4rem)",
                 padding: "4rem",
+                background:
+                  "linear-gradient(126deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+                webkitBackgroundClip: "text",
+                webkitTextFillColor: "transparent",
               }}
             >
               One Learns. Many Create.

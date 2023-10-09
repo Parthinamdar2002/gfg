@@ -49,7 +49,7 @@ function Posts(props) {
         <Grid container spacing={3}>
           {posts.map((post) => (
             // eslint-disable-next-line
-            <Grid item xs={12} sm={6} lg={3} onClick={() => setCurrent(post)}>
+            <Grid item xs={12} sm={6} lg={3} onClick={() => {setCurrent(post); window}}>
               <TransparentBlogCard
                 image={post.featured_image}
                 title={post.title}

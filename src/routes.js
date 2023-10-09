@@ -254,7 +254,7 @@ const routes = [
     href: "/gfg/blog",
   },
   {
-    name: "tem",
+    name: "Meet the Team",
     icon: <Icon>team</Icon>,
     columns: 1,
     rowsPerColumn: 2,

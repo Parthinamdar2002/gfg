@@ -472,7 +472,7 @@ function DefaultNavbar({ routes, transparent, light, sticky, relative, center, g
         <MKBox display="flex" justifyContent="space-between" alignItems="center" padding="0">
           <MKBox
             component={Link}
-            to="/"
+            to="/gfg"
             lineHeight={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
