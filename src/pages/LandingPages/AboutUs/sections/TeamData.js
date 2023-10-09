@@ -31,7 +31,7 @@ const data = [
   {
     no: "0",
     name: "Parminder Kaur",
-    designation: "Supreme Leader",
+    designation: "Head, Training and Placement Cell",
     team: "TnP",
     contact: "9511248614",
     img: ParminderKaur,
