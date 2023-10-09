@@ -77,8 +77,8 @@ function Team() {
                 <Tilt options={{ reverse: true, perspective: 1000, max: 25 }}>
                   <HorizontalTeamCard
                     image={member.img}
-                    name={member.Name}
-                    position={{ color: "info", label: member.Designation }}
+                    name={member.name}
+                    position={{ color: "info", label: member.designation }}
                     description={{
                       points: ["HOHOHO", "hahaha"],
                       socials: { linkedin: "linkedin.com", github: "github.com/the-bokya" },

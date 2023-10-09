@@ -84,7 +84,7 @@ function AboutUs() {
               })}
               style={{ fontFamily: "'Lobster Two', cursive" }}
             >
-              Meet the Awesome Peeps at <br /> <span>GFG — MGMU</span>
+              Meet the Awesome Peeps at <br /> <span style={{ fontFamily: "" }}>GFG — MGMU</span>
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
               The boys (and the gals)
@@ -93,7 +93,6 @@ function AboutUs() {
         </Container>
       </MKBox>
       <Card style={{ width: "100%" }}>
-        <Team />
         <Team />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
